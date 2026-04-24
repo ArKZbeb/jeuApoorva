@@ -11,6 +11,21 @@
 → Commandes: `F5` dans Godot  
 → Ou: Double-clic sur `Jeu_Adieu_Apoorva.exe`
 
+### Je veux UTILISER les EASTER EGGS ✨ (NOUVEAU!)
+→ Lire: **EASTER_EGGS_QUICK_START.md** (2 min)  
+→ Taper "meme" à une énigme  
+→ Voir le feedback spécial + image!
+
+### Je veux AJOUTER un EASTER EGG ✨ (NOUVEAU!)
+→ Lire: **EASTER_EGGS_HOW_TO.md** (5 min)  
+→ Guide pas à pas avec copie/colle  
+→ Ligne 146 du `scripts/game_manager.gd`
+
+### Je veux COMPRENDRE les EASTER EGGS ✨ (NOUVEAU!)
+→ Lire: **EASTER_EGGS_GUIDE.md** (15 min)  
+→ Explication technique complète  
+→ Comment modifier et créer
+
 ### J'ai un PROBLÈME
 → Lire: **TROUBLESHOOTING.md**  
 → Vérifier: Console Godot (F12)  
@@ -57,6 +72,13 @@
 ├── DEPLOYMENT_CHECKLIST.md      ← Déploiement vers Apoorva (NEW v1.1.0) ⭐
 ├── TROUBLESHOOTING.md           ← Résolution de problèmes
 ├── RESUME.txt                   ← Vue d'ensemble visuelle
+├── IMPROVEMENTS.md              ← Améliorations (NEW v1.2.0) ⭐
+├── BUGFIXES.md                  ← Corrections bugs (NEW v1.2.0) ⭐
+├── EASTER_EGGS_QUICK_START.md   ← Easter eggs rapide (NEW v1.2.0) ⭐
+├── EASTER_EGGS_HOW_TO.md        ← Guide pas à pas (NEW v1.2.0) ⭐
+├── EASTER_EGGS_GUIDE.md         ← Guide complet (NEW v1.2.0) ⭐
+├── EASTER_EGGS_TUTORIAL.md      ← Tutoriel pratique (NEW v1.2.0) ⭐
+├── COMPLETE_SUMMARY.md          ← Résumé complet (NEW v1.2.0) ⭐
 ├── INDEX.md                     ← Ce fichier (navigation)
 ├── LAUNCH.txt                   ← Instructions de lancement
 └── checklist.sh                 ← Vérifier tout est OK
@@ -66,6 +88,15 @@
 ⭐ TEST_PLAN.md - Procédures de test complètes avec résultats attendus
 ⭐ CHANGELOG.md - Historique détaillé des changements
 ⭐ DEPLOYMENT_CHECKLIST.md - Guide complet du déploiement
+
+**NOUVEAU en v1.2.0 (Easter Eggs & Images):**
+⭐ IMPROVEMENTS.md - Résumé de toutes les améliorations (musique, images)
+⭐ BUGFIXES.md - 2 bugs corrigés avec explications
+⭐ EASTER_EGGS_QUICK_START.md - Résumé rapide des easter eggs (2 min)
+⭐ EASTER_EGGS_HOW_TO.md - Guide pas à pas (5 min)
+⭐ EASTER_EGGS_GUIDE.md - Documentation technique complète (15 min)
+⭐ EASTER_EGGS_TUTORIAL.md - 3 tutoriels pratiques (10 min)
+⭐ COMPLETE_SUMMARY.md - Vue d'ensemble complète avec tous les détails
 
 ### 🎮 Scènes (Fichiers .tscn)
 ```

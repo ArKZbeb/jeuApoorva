@@ -21,6 +21,10 @@ run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalMusicManager="*res://scripts/global_music_manager.gd"
+
 [input]
 
 ui_accept={
