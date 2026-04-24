@@ -1,0 +1,276 @@
+[gd_scene load_steps=18 format=3 uid="uid://bp5a8gh3kycm7"]
+
+[ext_resource type="Script" path="res://scripts/input_manager.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/camera_manager.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/ui_manager.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/salle_aventures.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/next_scene_button.gd" id="7"]
+[ext_resource type="Script" path="res://scripts/enigma_object.gd" id="8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+[sub_resource type="StandardMaterial3D" id="Material_Gray"]
+albedo_color = Color(0.5, 0.5, 0.5, 1.0)
+
+[sub_resource type="StandardMaterial3D" id="Material_Floor"]
+albedo_color = Color(0.3, 0.3, 0.3, 1.0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Blue"]
+albedo_color = Color(0.0, 0.5, 1.0, 1.0)
+emission_enabled = true
+emission = Color(0.0, 0.5, 1.0, 1.0)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="StandardMaterial3D" id="Material_Green"]
+albedo_color = Color(0.0, 1.0, 0.0, 1.0)
+emission_enabled = true
+emission = Color(0.0, 1.0, 0.0, 1.0)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="StandardMaterial3D" id="Material_Purple"]
+albedo_color = Color(1.0, 0.0, 1.0, 1.0)
+emission_enabled = true
+emission = Color(1.0, 0.0, 1.0, 1.0)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
+[sub_resource type="StandardMaterial3D" id="Material_Cyan"]
+albedo_color = Color(0.0, 1.0, 1.0, 1.0)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
+
+[node name="SalleAventures" type="Node3D"]
+script = ExtResource("6")
+
+[node name="InputManager" type="Node" parent="."]
+script = ExtResource("1")
+
+[node name="CameraManager" type="Node" parent="."]
+script = ExtResource("2")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("3")
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+script = ExtResource("4")
+
+[node name="NotificationLabel" type="Label" parent="UIManager"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 500.0
+offset_bottom = 60.0
+text = "Salle Aventures - Cliquez sur les buzzers (Enigmes)"
+
+[node name="FeedbackLabel" type="Label" parent="UIManager"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 50.0
+text = "Feedback"
+
+[node name="EnigmaPanel" type="PanelContainer" parent="UIManager"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = 150.0
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/EnigmaPanel"]
+layout_mode = 2
+
+[node name="QuestionLabel" type="Label" parent="UIManager/EnigmaPanel/VBoxContainer"]
+layout_mode = 2
+text = "Question?"
+
+[node name="AnswerInput" type="LineEdit" parent="UIManager/EnigmaPanel/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Reponse..."
+
+[node name="SubmitButton" type="Button" parent="UIManager/EnigmaPanel/VBoxContainer"]
+layout_mode = 2
+text = "Soumettre"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, -0.707107, 0.5, 0.707107, 0, 0.707107, -0.5, 0.707107, 0.5, 0, 10, 0)
+energy_multiplier = 1.5
+
+[node name="PointLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+omni_range = 20.0
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="LeftWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, -15, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="LeftWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Gray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="RightWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, 15, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="RightWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Gray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="BackWall" type="StaticBody3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, 15)
+
+[node name="Mesh" type="MeshInstance3D" parent="BackWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Gray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("5")
+
+[node name="Body" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_1")
+material_override = SubResource("Material_Cyan")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="Enigma1" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 5)
+script = ExtResource("8")
+enigma_id = 1
+
+[node name="Mesh" type="MeshInstance3D" parent="Enigma1"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Blue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma1"]
+shape = SubResource("CylinderShape3D_1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma1"]
+omni_range = 3.0
+light_color = Color(0, 0.5, 1, 1)
+
+[node name="Enigma2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 5)
+script = ExtResource("8")
+enigma_id = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Enigma2"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Blue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma2"]
+shape = SubResource("CylinderShape3D_1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma2"]
+omni_range = 3.0
+light_color = Color(0, 0.5, 1, 1)
+
+[node name="Enigma3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+script = ExtResource("8")
+enigma_id = 3
+
+[node name="Mesh" type="MeshInstance3D" parent="Enigma3"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Green")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma3"]
+shape = SubResource("CylinderShape3D_1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma3"]
+omni_range = 3.0
+light_color = Color(0, 1, 0, 1)
+
+[node name="Enigma4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 5)
+script = ExtResource("8")
+enigma_id = 4
+
+[node name="Mesh" type="MeshInstance3D" parent="Enigma4"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Green")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma4"]
+shape = SubResource("CylinderShape3D_1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma4"]
+omni_range = 3.0
+light_color = Color(0, 1, 0, 1)
+
+[node name="Enigma5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 5)
+script = ExtResource("8")
+enigma_id = 5
+
+[node name="Mesh" type="MeshInstance3D" parent="Enigma5"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Purple")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma5"]
+shape = SubResource("CylinderShape3D_1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma5"]
+omni_range = 3.0
+light_color = Color(1, 0, 1, 1)
+
+[node name="Enigma6" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 5)
+script = ExtResource("8")
+enigma_id = 6
+
+[node name="Mesh" type="MeshInstance3D" parent="Enigma6"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Purple")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma6"]
+shape = SubResource("CylinderShape3D_1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma6"]
+omni_range = 3.0
+light_color = Color(1, 0, 1, 1)
+
+[node name="NextSceneButton" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+script = ExtResource("7")
+next_scene = "res://scenes/mur_messages.tscn"
+require_all_enigmas = true
+
+[node name="Mesh" type="MeshInstance3D" parent="NextSceneButton"]
+mesh = SubResource("CylinderMesh_1")
+material_override = SubResource("Material_Purple")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextSceneButton"]
+shape = SubResource("CylinderShape3D_1")

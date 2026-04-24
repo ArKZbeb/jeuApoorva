@@ -1,0 +1,364 @@
+================================================================================
+📋 MANIFEST - Jeu d'Adieu Apoorva (Godot 4.6)
+================================================================================
+
+VERSION: 1.1.0
+ENGINE: Godot 4.6+
+PLATEFORME: Windows 10+, macOS, Linux
+MODE: Single-Player FPS Interactive Adventure
+DURÉE: 5-15 minutes
+
+================================================================================
+🎮 CARACTÉRISTIQUES PRINCIPALES
+================================================================================
+
+✅ Mode single-player (1 joueur au clavier)
+✅ Contrôles ZQSD + Souris + Manette optionnelle
+✅ 3 actes progressifs avec conditions d'avancement
+✅ 6 énigmes personnalisées sur Apoorva
+✅ Musique d'ambiance persistante (Espresso - Sabrina Carpenter)
+✅ Système de progression (doit résoudre 6/6 énigmes)
+✅ Easter egg spécial ("meme" → réponse surprise + 👑)
+✅ Messages d'adieu personnalisés (JSON)
+✅ Export standalone .exe (aucune dépendance nécessaire)
+✅ Cross-plateforme (Windows/macOS/Linux)
+
+================================================================================
+📁 STRUCTURE DU PROJET
+================================================================================
+
+godot_jeu/
+├── scenes/
+│   ├── menu.tscn               # Menu principal + MusicManager
+│   ├── bureau.tscn             # Acte 1 - Exploration libre
+│   ├── salle_aventures.tscn    # Acte 2 - 6 énigmes + condition
+│   └── mur_messages.tscn       # Acte 3 - Messages d'adieu final
+│
+├── scripts/ (34 fichiers GDScript)
+│   ├── player_controller.gd    # Mouvement FPS (ZQSD + souris)
+│   ├── game_manager.gd         # Énigmes + progression (6/6 condition)
+│   ├── ui_manager.gd           # Dialogues + feedback + notifications
+│   ├── enigma_object.gd        # Buzzers interactifs (Area3D)
+│   ├── next_scene_button.gd    # Boutons de progression
+│   ├── music_manager.gd        # Musique persistante (Espresso)
+│   ├── easter_egg_manager.gd   # Gestion easter eggs
+│   ├── message_parser.gd       # Parse JSON messages
+│   ├── menu.gd                 # Logique menu
+│   ├── bureau.gd               # Logique Acte 1
+│   ├── salle_aventures.gd      # Logique Acte 2
+│   ├── mur_messages.gd         # Logique Acte 3 + affichage messages
+│   ├── camera_manager.gd       # Gestion caméra
+│   ├── input_manager.gd        # Clavier + manette
+│   ├── [autres utilitaires]    # Scripts supports
+│
+├── assets/
+│   ├── audio/
+│   │   └── Sabrina Carpenter - Espresso (Official Video).mp3  ✅
+│   │
+│   ├── data/
+│   │   ├── enigmes.json        # 6 énigmes avec questions/réponses
+│   │   └── message.json        # 10 messages d'adieu
+│   │
+│   └── images/                 # 11 photos (feature optionnelle)
+│       ├── 20250925_134343.jpg
+│       ├── 20250925_134412.jpg
+│       ├── IMG_*.jpeg/jpg
+│       ├── photoMariage.png
+│       └── unnamed.jpg
+│
+├── project.godot               # Configuration Godot
+│
+├── 📖 Documentation:
+│   ├── README.md               # Vue d'ensemble complète
+│   ├── QUICKSTART.md           # Guide de démarrage rapide
+│   ├── TEST_PLAN.md            # Plan de test complet (NEW)
+│   ├── BUILD.md                # Guide build & export .exe (NEW)
+│   ├── CHANGELOG.md            # Historique des versions (NEW)
+│   ├── TROUBLESHOOTING.md      # Dépannage
+│   ├── INDEX.md                # Index
+│   ├── MANIFEST.txt            # Ce fichier
+│   ├── RESUME.txt              # Résumé rapide
+│   └── LAUNCH.txt              # Instructions lancement
+
+================================================================================
+🕹️ CONTRÔLES
+================================================================================
+
+CLAVIER:
+├─ Z ou Haut    → Avancer
+├─ S ou Bas     → Reculer
+├─ Q ou Gauche  → Tourner à gauche
+├─ D ou Droite  → Tourner à droite
+├─ Souris       → Regarder autour (maintenir clic-droit)
+├─ E            → Interagir avec énigmes/boutons
+├─ Espace       → Sauter
+└─ Entrée       → Valider réponse d'énigme
+
+MANETTE (optionnel):
+├─ Stick Gauche  → Mouvement (ZQSD équivalent)
+├─ Stick Droit   → Regard/Caméra
+└─ Bouton X/□    → Interagir (E équivalent)
+
+================================================================================
+🎯 LES 3 ACTES
+================================================================================
+
+ACTE 1: LE BUREAU
+- Durée: 1-2 minutes
+- Condition d'accès: Aucune (libre d'entrée)
+- Objectif: Trouver et cliquer le bouton rouge "Quitter Bureau"
+- Description: Salle de bureau minimaliste - exploration libre
+- Progression: Cliquer E sur le bouton → Acte 2
+
+ACTE 2: SALLE AVENTURES
+- Durée: 5-10 minutes
+- Condition d'accès: Avoir quitté Bureau
+- Objectif: Résoudre les 6 ÉNIGMES pour débloquer la sortie
+- Description: Grande salle avec 6 buzzers colorés (cyan, vert, violet, etc.)
+- 6 ÉNIGMES À RÉSOUDRE:
+  1. "Quel pays manque à sa famille?" → netherlands
+  2. "Premier grand projet qu'elle a mené?" → one ad conducteur
+  3. "Quel autre projet majeur?" → le décrochage
+  4. "Sa passion secrète?" → karaoke
+  5. "Phrase culte pour briser les...?" → briser les glaçons
+  6. "Mot 'interdit' qu'on adorait dire?" → bordel
+
+- EASTER EGG: Taper "meme" comme réponse → 👑 MEME QUEEN FOR LIFE! 👑
+  (Compte comme énigme résolue et déverrouille une réponse amusante)
+
+- Progression: Résoudre 6/6 énigmes → Bouton devient vert/actif
+               Cliquer E → Acte 3
+
+ACTE 3: MUR DES MESSAGES
+- Durée: 1-2 minutes
+- Condition d'accès: Avoir résolu 6/6 énigmes dans Acte 2
+- Objectif: Voir les messages d'adieu d'Apoorva
+- Description: Affichage grand texte de tous les messages personnalisés
+- Finale: 👑 MEME QUEEN 👑 - Célébration et fin du jeu
+
+================================================================================
+📊 DONNÉES - ENIGMES.JSON
+================================================================================
+
+Structure:
+{
+  "enigmes": [
+    {
+      "id": 1,
+      "question": "Quel pays manque à sa famille?",
+      "reponse": "netherlands",
+      "indice": "Un pays avec des moulins et des tulipes",
+      "type": "texte",
+      "feedback": "C'est ça! Sa sœur vit aux Pays-Bas! 🇳🇱"
+    },
+    ... (5 autres énigmes)
+  ]
+}
+
+Caractéristiques:
+- Réponses insensibles à la casse (netherlands = NETHERLANDS = Netherlands)
+- Réponses insensibles aux espaces (one ad conducteur = oneadconducteur)
+- Chaque énigme a un ID unique (1-6)
+- Chaque énigme a un indice en cas de mauvaise réponse
+- Chaque énigme a un feedback de confirmation
+
+================================================================================
+📊 DONNÉES - MESSAGE.JSON
+================================================================================
+
+Structure:
+{
+  "messages": [
+    {"auteur": "Alice", "texte": "Message d'adieu #1..."},
+    {"auteur": "Bob", "texte": "Message d'adieu #2..."},
+    ... (jusqu'à 10 messages)
+  ]
+}
+
+Affichage:
+- Tous les messages s'affichent dans Acte 3 (Mur des Messages)
+- Chaque message occupe plusieurs lignes
+- Les messages sont concaténés et affichés en grand texte
+
+================================================================================
+🚀 LANCEMENT RAPIDE
+================================================================================
+
+AVEC GODOT EDITOR:
+1. Ouvrir Godot 4.6+
+2. Charger le projet: godot_jeu/
+3. Appuyer F5 (ou cliquer Play en haut à droite)
+4. Le jeu lance directement au Menu
+
+AVEC EXÉCUTABLE STANDALONE:
+1. Double-cliquer sur Jeu_Adieu_Apoorva.exe (après export)
+2. Le jeu lance directement (aucune installation)
+3. Jouer!
+
+================================================================================
+⚙️ INSTALLATION & PRÉREQUIS
+================================================================================
+
+POUR GODOT EDITOR:
+- Godot 4.6+ (télécharger depuis godotengine.org)
+- Windows 10+, macOS, ou Linux
+- Clavier + Souris (manette optionnelle)
+
+POUR STANDALONE .EXE:
+- Windows 10+ (10, 11, etc.)
+- Aucune installation Godot requise
+- Clavier + Souris (manette optionnelle)
+
+================================================================================
+📦 BUILD & EXPORT - WINDOWS .EXE
+================================================================================
+
+PRÉREQUIS À L'EXPORT:
+- Godot 4.6+ doit être installé et le projet ouvert
+- Tous les fichiers doivent compiler (F12 pour vérifier)
+- enigmes.json et message.json doivent être présents
+- Musique MP3 doit être présente
+
+ÉTAPES D'EXPORT:
+1. Depuis Godot: Project → Export... (Ctrl+Alt+E)
+2. Ajouter preset si absent: Add Preset → Windows Desktop
+3. Configurer: Export Path = ../Jeu_Adieu_Apoorva.exe
+4. Cliquer "Export Project"
+5. Choisir dossier de destination
+6. Attendre 30-60 secondes
+
+RÉSULTAT:
+- Jeu_Adieu_Apoorva.exe (l'exécutable)
+- Jeu_Adieu_Apoorva.exe.folder/ (les assets/données)
+  [IMPORTANT: Garder ce dossier avec le .exe!]
+
+DISTRIBUTION:
+- Zipper le dossier entier
+- Partager le .zip
+- L'utilisateur dézippe et double-clic sur .exe
+
+================================================================================
+🐛 TROUBLESHOOTING RAPIDE
+================================================================================
+
+PROBLÈME: Scripts ne compilent pas
+→ F12 pour voir les erreurs
+→ Chercher les lignes rouges
+→ Corriger et relancer
+
+PROBLÈME: Pas de musique au démarrage
+→ Vérifier: assets/audio/Sabrina Carpenter - Espresso*.mp3 existe
+→ Vérifier: MusicManager est dans scène Menu
+→ Consulter: TROUBLESHOOTING.md
+
+PROBLÈME: Énigmes ne s'affichent pas
+→ Vérifier: enigmes.json est présent et valide
+→ Vérifier: GameManager est dans scène SalleAventures
+→ Vérifier: UIManager existe avec tous les éléments
+→ Consulter: TROUBLESHOOTING.md
+
+PROBLÈME: Bouton "Accès Mur des Messages" grisé
+→ Normal! Résoudre d'abord les 6/6 énigmes
+→ Vérifier le compteur (X/6) en bas à gauche
+→ Après 6/6, attendre 2 secondes et réessayer
+
+PROBLÈME: .exe lance mais manque ressources
+→ Vérifier que le dossier .exe.folder/ est présent
+→ Vérifier que enigmes.json et message.json y sont
+→ Consulter: BUILD.md section Troubleshooting
+
+================================================================================
+📝 PERSONNALISATION
+================================================================================
+
+AJOUTER DES ÉNIGMES:
+1. Éditer assets/data/enigmes.json
+2. Ajouter un nouvel objet dans le tableau "enigmes"
+3. Incrémenter l'ID (id: 7, 8, etc.)
+4. Sauvegarder et relancer
+
+MODIFIER LES MESSAGES:
+1. Éditer assets/data/message.json
+2. Modifier ou ajouter des messages
+3. Chaque message: {"auteur": "...", "texte": "..."}
+4. Sauvegarder et relancer
+
+CHANGER LA MUSIQUE:
+1. Remplacer le fichier: assets/audio/*.mp3
+2. Ou éditer music_manager.gd et changer le chemin
+3. Les formats supportés: .mp3, .ogg, .wav
+
+AJOUTER DES IMAGES:
+1. Copier dans: assets/images/
+2. Les images existent mais ne sont pas encore intégrées dans le jeu
+3. Feature future: affichage galerie photos dans Acte 3
+
+================================================================================
+📞 SUPPORT & DOCUMENTATION
+================================================================================
+
+FICHIERS DE DOCUMENTATION:
+- README.md ........................... Vue d'ensemble
+- QUICKSTART.md ....................... Démarrage rapide
+- TEST_PLAN.md (NEW) .................. Plan de test complet
+- BUILD.md (NEW) ...................... Guide export .exe
+- CHANGELOG.md (NEW) .................. Historique des versions
+- TROUBLESHOOTING.md .................. Solutions aux problèmes
+- MANIFEST.txt (ce fichier) ........... Description complète
+
+CONSOLE GODOT (F12):
+- Affiche tous les logs
+- Chercher logs avec "[NomDuScript]"
+- Exemple: [GameManager], [UIManager], [MusicManager]
+- Utile pour déboguer les problèmes
+
+RESSOURCES EXTERNES:
+- Godot Engine: https://godotengine.org/
+- Godot Docs: https://docs.godotengine.org/
+- GDScript Language: https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/
+
+================================================================================
+✨ FINAL CHECKLIST AVANT DISTRIBUTION
+================================================================================
+
+VÉRIFICATIONS FONCTIONNELLES:
+☐ Lancer F5 - le jeu démarre sans crash
+☐ Menu apparaît avec "👑 MEME QUEEN 👑"
+☐ Musique Espresso joue au démarrage
+☐ Bouton "Commencer le Jeu" fonctionne
+☐ Bureau s'affiche correctement
+☐ Bouton "Quitter Bureau" est cliquable
+☐ Salle Aventures s'affiche avec 6 buzzers
+☐ Chaque énigme pose sa question
+☐ Répondre correctement marque l'énigme ✅
+☐ Répondre "meme" déclenche l'easter egg 👑
+☐ Après 6/6, bouton "Accès" devient actif
+☐ Mur des Messages affiche tous les messages
+☐ Aucun crash entre les transitions
+
+FICHIERS REQUIS:
+☐ enigmes.json existe et contient 6 énigmes
+☐ message.json existe et contient messages
+☐ Espresso.mp3 existe dans assets/audio/
+☐ Tous les scripts compilent (pas d'erreurs)
+☐ project.godot existe et est valide
+
+EXPORT .EXE:
+☐ Export Windows Desktop créé avec succès
+☐ Jeu_Adieu_Apoorva.exe existe
+☐ Dossier .exe.folder/ existe avec assets
+☐ Double-clic sur .exe lance le jeu
+☐ Test rapide du .exe réussit
+
+================================================================================
+👑 CRÉÉ AVEC AMOUR EN GODOT 4.6
+================================================================================
+
+Pour célébrer le départ d'Apoorva
+Une aventure interactive personnalisée
+Un adieu mémorable du team
+
+Bon jeu! 🎮✨
+
+Version: 1.1.0 (24 Avril 2026)
+Status: FINAL RELEASE - READY FOR DEPLOYMENT ✅

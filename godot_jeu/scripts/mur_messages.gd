@@ -1,0 +1,41 @@
+extends Node3D
+
+# Affiche les messages sur le mur 3D
+
+class_name MessageWallDisplay
+
+func _ready():
+	await get_tree().process_frame
+	setup_player()
+	display_messages_on_wall()
+	print("[MessageWallDisplay] Scene loaded")
+
+func setup_player():
+	if has_node("Player"):
+		var player = $Player
+		if player.has_method("initialize"):
+			player.initialize(0)
+			
+			var camera_manager = $CameraManager if has_node("CameraManager") else null
+			if camera_manager and camera_manager.has_method("register_player"):
+				camera_manager.register_player(player, 0)
+
+func display_messages_on_wall():
+	var message_parser = $MessageParser
+	if message_parser == null:
+		push_error("[MessageWallDisplay] MessageParser not found!")
+		return
+	
+	var messages = message_parser.get_all_messages()
+	var message_text = "👑 MEME QUEEN 👑\n\n"
+	
+	for msg in messages:
+		message_text += "[%s]\n%s\n\n" % [msg.get("auteur", "?"), msg.get("texte", "")]
+	
+	message_text += "\n👑 MEME QUEEN 👑"
+	
+	# Afficher sur l'écran UI
+	var messages_display = $UIManager/MessagesDisplay if has_node("UIManager/MessagesDisplay") else null
+	if messages_display:
+		messages_display.text = message_text
+		print("[MessageWallDisplay] Messages displayed on screen")
