@@ -6,3 +6,4 @@ res://scenes/menu.tscn
 res://assets/data/enigmes.json
 res://assets/data/message.json
 res://new_standard_material_3d.tres
+res://scripts/mur_messages.gd
