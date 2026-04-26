@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://vhnetidx54n" path="res://scripts/salle_aventures.gd" id="6"]
 [ext_resource type="Script" uid="uid://bup82jyfiwbg8" path="res://scripts/next_scene_button.gd" id="7"]
 [ext_resource type="Script" uid="uid://bio8tks2xryxq" path="res://scripts/enigma_object.gd" id="8"]
+[ext_resource type="Script" path="res://scripts/cheat_manager.gd" id="9"]
 
 [sub_resource type="StandardMaterial3D" id="Material_Wood"]
 albedo_color = Color(0.4, 0.3, 0.2, 1)
@@ -60,6 +61,9 @@ albedo_color = Color(0.5, 0.5, 0.5, 1)
 
 [node name="SalleAventures" type="Node3D" unique_id=1497682224]
 script = ExtResource("6")
+
+[node name="CheatManager" type="Node" parent="." unique_id=999999999]
+script = ExtResource("9")
 
 [node name="InputManager" type="Node" parent="." unique_id=279410312]
 script = ExtResource("1")

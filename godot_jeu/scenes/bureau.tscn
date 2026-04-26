@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://m8rvsn4l3tfb" path="res://scripts/bureau.gd" id="6"]
 [ext_resource type="Material" uid="uid://3uggavhjdll3" path="res://new_standard_material_3d.tres" id="6_6dwu1"]
 [ext_resource type="Script" uid="uid://bup82jyfiwbg8" path="res://scripts/next_scene_button.gd" id="7"]
+[ext_resource type="Script" path="res://scripts/cheat_manager.gd" id="8"]
 
 [sub_resource type="StandardMaterial3D" id="Material_Black"]
 albedo_color = Color(0.1, 0.1, 0.1, 1)
@@ -46,6 +47,9 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="Bureau" type="Node3D" unique_id=241277613]
 script = ExtResource("6")
+
+[node name="CheatManager" type="Node" parent="." unique_id=999999999]
+script = ExtResource("8")
 
 [node name="InputManager" type="Node" parent="." unique_id=1047592940]
 script = ExtResource("1")
