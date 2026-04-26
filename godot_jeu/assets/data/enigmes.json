@@ -27,23 +27,23 @@
 	{
 	  "id": 4,
 	  "question": "Sa passion secrète?",
-	  "reponse": "le karaoke",
+	  "reponse": "Le karaoke",
 	  "indice": "Elle adore chanter! 🎤",
 	  "type": "clic_objet",
 	  "feedback": "Elle adore le karaoké! 🎵"
 	},
 	{
 	  "id": 5,
-	  "question": "Phrase culte pour briser les... ?",
-	  "reponse": "briser les glaçons",
-	  "indice": "Regardez les post-its!",
+	  "question": "Quelle est notre nom?",
+	  "reponse": "La diff",
+	  "indice": "Les goats",
 	  "type": "recherche",
-	  "feedback": "Briser les glaçons! La phrase parfaite pour démarrer! ❄️"
+	  "feedback": "On est les meilleurs"
 	},
 	{
 	  "id": 6,
-	  "question": "Mot 'interdit' d'après certaine ?",
-	  "reponse": "bordel",
+	  "question": "Mot 'interdit' d'après certaine personnes ?",
+	  "reponse": "Bordel",
 	  "indice": "C'était 'interdit' en entreprise...",
 	  "type": "easter_egg",
 	  "feedback": "BORDEL! 😄 Tu es vachement doué, tu as doué !"
