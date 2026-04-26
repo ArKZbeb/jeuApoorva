@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bfl5kd6dg2vgr" path="res://scripts/ui_manager.gd" id="4"]
 [ext_resource type="Script" uid="uid://c80gp1y6yk48k" path="res://scripts/player_controller.gd" id="5"]
 [ext_resource type="Script" uid="uid://b0xga21fkihnh" path="res://scripts/mur_messages.gd" id="6"]
-[ext_resource type="Script" path="res://scripts/cheat_manager.gd" id="7"]
 
 [sub_resource type="StandardMaterial3D" id="Material_Black"]
 albedo_color = Color(0.1, 0.1, 0.1, 1)
@@ -24,9 +23,6 @@ albedo_color = Color(0, 1, 1, 1)
 
 [node name="MurMessages" type="Node3D" unique_id=869664671]
 script = ExtResource("6")
-
-[node name="CheatManager" type="Node" parent="." unique_id=999999999]
-script = ExtResource("7")
 
 [node name="InputManager" type="Node" parent="." unique_id=1440353042]
 script = ExtResource("1")
@@ -111,8 +107,7 @@ shape = SubResource("BoxShape3D_1")
 
 [node name="Label3D" type="Label3D" parent="FinalDecor/MessageWall" unique_id=945140195]
 text = "Messages..."
-autowrap_mode = 1
-width = 100.0
+font_size = 28
 
 [node name="Ground" type="StaticBody3D" parent="FinalDecor" unique_id=1126633582]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
