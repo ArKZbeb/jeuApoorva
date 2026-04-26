@@ -1,60 +1,62 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp5a8gh3kycm6"]
+[gd_scene format=3 uid="uid://bp5a8gh3kycm6"]
 
-[ext_resource type="Script" path="res://scripts/input_manager.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/camera_manager.gd" id="2"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3"]
-[ext_resource type="Script" path="res://scripts/ui_manager.gd" id="4"]
-[ext_resource type="Script" path="res://scripts/player_controller.gd" id="5"]
-[ext_resource type="Script" path="res://scripts/bureau.gd" id="6"]
-[ext_resource type="Script" path="res://scripts/next_scene_button.gd" id="7"]
+[ext_resource type="Script" uid="uid://u5l335exw82t" path="res://scripts/input_manager.gd" id="1"]
+[ext_resource type="Script" uid="uid://bnf11uc6olrtm" path="res://scripts/camera_manager.gd" id="2"]
+[ext_resource type="Script" uid="uid://cmsg1dr7dwc3v" path="res://scripts/game_manager.gd" id="3"]
+[ext_resource type="Script" uid="uid://bfl5kd6dg2vgr" path="res://scripts/ui_manager.gd" id="4"]
+[ext_resource type="Script" uid="uid://c80gp1y6yk48k" path="res://scripts/player_controller.gd" id="5"]
+[ext_resource type="Script" uid="uid://m8rvsn4l3tfb" path="res://scripts/bureau.gd" id="6"]
+[ext_resource type="Script" uid="uid://bup82jyfiwbg8" path="res://scripts/next_scene_button.gd" id="7"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Gray"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1"]
-[sub_resource type="StandardMaterial3D" id="Material_Gray"]
-albedo_color = Color(0.5, 0.5, 0.5, 1.0)
-
-[sub_resource type="StandardMaterial3D" id="Material_Red"]
-albedo_color = Color(1.0, 0.0, 0.0, 1.0)
-
-[sub_resource type="StandardMaterial3D" id="Material_Wood"]
-albedo_color = Color(0.4, 0.3, 0.2, 1.0)
-
-[sub_resource type="StandardMaterial3D" id="Material_DarkGray"]
-albedo_color = Color(0.2, 0.2, 0.2, 1.0)
-
-[sub_resource type="StandardMaterial3D" id="Material_White"]
-albedo_color = Color(0.9, 0.9, 0.9, 1.0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1"]
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Wood"]
+albedo_color = Color(0.4, 0.3, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_White"]
+albedo_color = Color(0.9, 0.9, 0.9, 1)
+
 [sub_resource type="StandardMaterial3D" id="Material_Cyan"]
-albedo_color = Color(0.0, 1.0, 1.0, 1.0)
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Red"]
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2"]
 
-[node name="Bureau" type="Node3D"]
+[node name="Bureau" type="Node3D" unique_id=241277613]
 script = ExtResource("6")
 
-[node name="InputManager" type="Node" parent="."]
+[node name="InputManager" type="Node" parent="." unique_id=1047592940]
 script = ExtResource("1")
 
-[node name="CameraManager" type="Node" parent="."]
+[node name="CameraManager" type="Node" parent="." unique_id=246867510]
 script = ExtResource("2")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." unique_id=1920226252]
 script = ExtResource("3")
 
-[node name="UIManager" type="CanvasLayer" parent="."]
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=1096670793]
 script = ExtResource("4")
 
-[node name="NotificationLabel" type="Label" parent="UIManager"]
+[node name="NotificationLabel" type="Label" parent="UIManager" unique_id=1918695978]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 220.0
 offset_bottom = 50.0
 text = "Bureau - Exploration (Press Space to continue)"
 
-[node name="FeedbackLabel" type="Label" parent="UIManager"]
+[node name="FeedbackLabel" type="Label" parent="UIManager" unique_id=526061113]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -65,7 +67,9 @@ offset_right = 150.0
 offset_bottom = 25.0
 text = "Feedback"
 
-[node name="EnigmaPanel" type="PanelContainer" parent="UIManager"]
+[node name="EnigmaPanel" type="PanelContainer" parent="UIManager" unique_id=1467292869]
+visible = false
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -74,169 +78,153 @@ offset_left = -250.0
 offset_top = -150.0
 offset_right = 250.0
 offset_bottom = 150.0
-visible = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/EnigmaPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/EnigmaPanel" unique_id=1060357091]
 layout_mode = 2
 
-[node name="QuestionLabel" type="Label" parent="UIManager/EnigmaPanel/VBoxContainer"]
+[node name="QuestionLabel" type="Label" parent="UIManager/EnigmaPanel/VBoxContainer" unique_id=2090547622]
 layout_mode = 2
 text = "Question?"
 
-[node name="AnswerInput" type="LineEdit" parent="UIManager/EnigmaPanel/VBoxContainer"]
+[node name="AnswerInput" type="LineEdit" parent="UIManager/EnigmaPanel/VBoxContainer" unique_id=949652406]
 layout_mode = 2
 placeholder_text = "Reponse..."
 
-[node name="SubmitButton" type="Button" parent="UIManager/EnigmaPanel/VBoxContainer"]
+[node name="SubmitButton" type="Button" parent="UIManager/EnigmaPanel/VBoxContainer" unique_id=1711386856]
 layout_mode = 2
 text = "Soumettre"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2022105337]
 transform = Transform3D(0.5, -0.707107, 0.5, 0.707107, 0, 0.707107, -0.5, 0.707107, 0.5, 0, 10, 0)
-energy_multiplier = 1.5
 
-[node name="PointLight3D" type="OmniLight3D" parent="."]
+[node name="PointLight3D" type="OmniLight3D" parent="." unique_id=994660059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
 omni_range = 15.0
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="." unique_id=2053100973]
 
-[node name="LeftWall" type="StaticBody3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, -25, 5, 0)
+[node name="LeftWall" type="StaticBody3D" parent="Walls" unique_id=1681095044]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 50, -25, 5, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Walls/LeftWall"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Walls/LeftWall" unique_id=2035167206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000005, 0.81645584, 0, 0)
 material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/LeftWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/LeftWall" unique_id=1525654810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.84295845, 0, 0)
 shape = SubResource("BoxShape3D_1")
 
-[node name="RightWall" type="StaticBody3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, 25, 5, 0)
+[node name="RightWall" type="StaticBody3D" parent="Walls" unique_id=1005992177]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 50, 25, 5, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Walls/RightWall"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Walls/RightWall" unique_id=436133005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.5313721, 0, 0)
 material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/RightWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/RightWall" unique_id=133062830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000002, -0.59895325, 0, 0)
 shape = SubResource("BoxShape3D_1")
 
-[node name="BackWall" type="StaticBody3D" parent="Walls"]
-transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -25)
+[node name="BackWall" type="StaticBody3D" parent="Walls" unique_id=1945864796]
+transform = Transform3D(50, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -25)
 
-[node name="Mesh" type="MeshInstance3D" parent="Walls/BackWall"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Walls/BackWall" unique_id=1025494948]
 material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/BackWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/BackWall" unique_id=1389642359]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Furniture" type="Node3D" parent="."]
+[node name="BackWall" type="StaticBody3D" parent="Walls/BackWall" unique_id=1572174211]
+transform = Transform3D(1.0000005, 0, 0, 0, 0.2, 0, 0, 0, 0.02, 0, -0.39064395, 50.185394)
 
-[node name="Desk1" type="StaticBody3D" parent="Furniture"]
+[node name="Mesh" type="MeshInstance3D" parent="Walls/BackWall/BackWall" unique_id=644972723]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 4.9999995, 0, 1.7232884, -11.045166)
+material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/BackWall/BackWall" unique_id=913503803]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Furniture" type="Node3D" parent="." unique_id=1305259603]
+
+[node name="Desk1" type="StaticBody3D" parent="Furniture" unique_id=404311754]
 transform = Transform3D(5, 0.5, 0, 0, 0.5, 0, 0, 0, 2, -8, 2, -10)
 
-[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk1"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk1" unique_id=935947961]
 material_override = SubResource("Material_Wood")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Desk1"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Desk2" type="StaticBody3D" parent="Furniture"]
-transform = Transform3D(5, 0.5, 0, 0, 0.5, 0, 0, 0, 2, 8, 2, -10)
-
-[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk2"]
 mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Wood")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Desk2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Desk1" unique_id=596909910]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Cabinet1" type="StaticBody3D" parent="Furniture"]
-transform = Transform3D(2, 3, 0, 0, 3, 0, 0, 0, 2, -20, 3, 5)
-
-[node name="Mesh" type="MeshInstance3D" parent="Furniture/Cabinet1"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_DarkGray")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Cabinet1"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Cabinet2" type="StaticBody3D" parent="Furniture"]
-transform = Transform3D(2, 3, 0, 0, 3, 0, 0, 0, 2, 20, 3, 5)
-
-[node name="Mesh" type="MeshInstance3D" parent="Furniture/Cabinet2"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_DarkGray")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Cabinet2"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Ceiling" type="StaticBody3D" parent="."]
+[node name="Ceiling" type="StaticBody3D" parent="." unique_id=602219200]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 10, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Ceiling"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Ceiling" unique_id=995732468]
 material_override = SubResource("Material_White")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling" unique_id=1652406721]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1183139472]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=592835332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6115551, 0)
 material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1852610092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5937791, 0)
 shape = SubResource("BoxShape3D_1")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="Player" type="CharacterBody3D" parent="." unique_id=383791703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3992424, 0)
 script = ExtResource("5")
 
-[node name="Body" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_1")
+[node name="Body" type="MeshInstance3D" parent="Player" unique_id=55275959]
 material_override = SubResource("Material_Cyan")
+mesh = SubResource("CapsuleMesh_1")
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1438945488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 current = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1221585738]
 shape = SubResource("CapsuleShape3D_1")
 
-[node name="Cube1" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 5)
+[node name="Cube1" type="StaticBody3D" parent="." unique_id=1704747137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.9907978, 5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Cube1"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Cube1" unique_id=450477471]
 material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube1" unique_id=706866536]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Cube2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 5)
+[node name="Cube2" type="StaticBody3D" parent="." unique_id=245158521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.9907978, 5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Cube2"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Cube2" unique_id=1575862322]
 material_override = SubResource("Material_Gray")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2" unique_id=1343760039]
 shape = SubResource("BoxShape3D_1")
 
-[node name="NextSceneButton" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0)
+[node name="NextSceneButton" type="Area3D" parent="." unique_id=1464440654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.8231106, 0)
 script = ExtResource("7")
-next_scene = "res://scenes/salle_aventures.tscn"
 require_all_enigmas = false
 
-[node name="Mesh" type="MeshInstance3D" parent="NextSceneButton"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="NextSceneButton" unique_id=1539094461]
 material_override = SubResource("Material_Red")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NextSceneButton"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextSceneButton" unique_id=311552950]
 shape = SubResource("BoxShape3D_2")

@@ -1,101 +1,109 @@
-[gd_scene load_steps=18 format=3 uid="uid://bp5a8gh3kycm7"]
+[gd_scene format=3 uid="uid://bp5a8gh3kycm7"]
 
-[ext_resource type="Script" path="res://scripts/input_manager.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/camera_manager.gd" id="2"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3"]
-[ext_resource type="Script" path="res://scripts/ui_manager.gd" id="4"]
-[ext_resource type="Script" path="res://scripts/player_controller.gd" id="5"]
-[ext_resource type="Script" path="res://scripts/salle_aventures.gd" id="6"]
-[ext_resource type="Script" path="res://scripts/next_scene_button.gd" id="7"]
-[ext_resource type="Script" path="res://scripts/enigma_object.gd" id="8"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_1"]
-[sub_resource type="StandardMaterial3D" id="Material_Gray"]
-albedo_color = Color(0.5, 0.5, 0.5, 1.0)
-
-[sub_resource type="StandardMaterial3D" id="Material_Floor"]
-albedo_color = Color(0.25, 0.25, 0.25, 1.0)
-
-[sub_resource type="StandardMaterial3D" id="Material_Ceiling"]
-albedo_color = Color(0.2, 0.2, 0.2, 1.0)
+[ext_resource type="Script" uid="uid://u5l335exw82t" path="res://scripts/input_manager.gd" id="1"]
+[ext_resource type="Script" uid="uid://bnf11uc6olrtm" path="res://scripts/camera_manager.gd" id="2"]
+[ext_resource type="Script" uid="uid://cmsg1dr7dwc3v" path="res://scripts/game_manager.gd" id="3"]
+[ext_resource type="Script" uid="uid://bfl5kd6dg2vgr" path="res://scripts/ui_manager.gd" id="4"]
+[ext_resource type="Script" uid="uid://c80gp1y6yk48k" path="res://scripts/player_controller.gd" id="5"]
+[ext_resource type="Script" uid="uid://vhnetidx54n" path="res://scripts/salle_aventures.gd" id="6"]
+[ext_resource type="Script" uid="uid://bup82jyfiwbg8" path="res://scripts/next_scene_button.gd" id="7"]
+[ext_resource type="Script" uid="uid://bio8tks2xryxq" path="res://scripts/enigma_object.gd" id="8"]
 
 [sub_resource type="StandardMaterial3D" id="Material_Wood"]
-albedo_color = Color(0.4, 0.3, 0.2, 1.0)
+albedo_color = Color(0.4, 0.3, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Cyan"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+
+[sub_resource type="StandardMaterial3D" id="Material_Blue"]
+albedo_color = Color(0, 0.5, 1, 1)
+emission_enabled = true
+emission = Color(0, 0.5, 1, 1)
+emission_energy_multiplier = 0.5
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_1"]
 
-[sub_resource type="StandardMaterial3D" id="Material_Blue"]
-albedo_color = Color(0.0, 0.5, 1.0, 1.0)
-emission_enabled = true
-emission = Color(0.0, 0.5, 1.0, 1.0)
-emission_energy_multiplier = 0.5
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
 
 [sub_resource type="StandardMaterial3D" id="Material_Green"]
-albedo_color = Color(0.0, 1.0, 0.0, 1.0)
+albedo_color = Color(0, 1, 0, 1)
 emission_enabled = true
-emission = Color(0.0, 1.0, 0.0, 1.0)
+emission = Color(0, 1, 0, 1)
 emission_energy_multiplier = 0.5
 
 [sub_resource type="StandardMaterial3D" id="Material_Purple"]
-albedo_color = Color(1.0, 0.0, 1.0, 1.0)
+albedo_color = Color(1, 0, 1, 1)
 emission_enabled = true
-emission = Color(1.0, 0.0, 1.0, 1.0)
+emission = Color(1, 0, 1, 1)
 emission_energy_multiplier = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
-[sub_resource type="StandardMaterial3D" id="Material_Cyan"]
-albedo_color = Color(0.0, 1.0, 1.0, 1.0)
-
 [sub_resource type="StandardMaterial3D" id="Material_Gold"]
-albedo_color = Color(1.0, 0.85, 0.0, 1.0)
+albedo_color = Color(1, 0.85, 0, 1)
 emission_enabled = true
-emission = Color(1.0, 0.85, 0.0, 1.0)
-emission_energy_multiplier = 0.3
-
-[sub_resource type="StandardMaterial3D" id="Material_Silver"]
-albedo_color = Color(0.8, 0.8, 0.8, 1.0)
-emission_enabled = true
-emission = Color(0.9, 0.9, 0.9, 1.0)
-emission_energy_multiplier = 0.2
-
-[sub_resource type="StandardMaterial3D" id="Material_Red"]
-albedo_color = Color(1.0, 0.2, 0.2, 1.0)
-emission_enabled = true
-emission = Color(1.0, 0.2, 0.2, 1.0)
+emission = Color(1, 0.85, 0, 1)
 emission_energy_multiplier = 0.3
 
 [sub_resource type="SphereMesh" id="SphereMesh_1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1"]
-radius = 0.5
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1"]
+[sub_resource type="StandardMaterial3D" id="Material_Silver"]
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+emission_enabled = true
+emission = Color(0.9, 0.9, 0.9, 1)
+emission_energy_multiplier = 0.2
 
-[node name="SalleAventures" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="Material_Red"]
+albedo_color = Color(1, 0.2, 0.2, 1)
+emission_enabled = true
+emission = Color(1, 0.2, 0.2, 1)
+emission_energy_multiplier = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfvbu"]
+albedo_color = Color(1.6852883, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7feju"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hcvuo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_712tb"]
+
+[node name="SalleAventures" type="Node3D" unique_id=1497682224]
 script = ExtResource("6")
 
-[node name="InputManager" type="Node" parent="."]
+[node name="InputManager" type="Node" parent="." unique_id=279410312]
 script = ExtResource("1")
 
-[node name="CameraManager" type="Node" parent="."]
+[node name="CameraManager" type="Node" parent="." unique_id=1023636698]
 script = ExtResource("2")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." unique_id=335736799]
 script = ExtResource("3")
 
-[node name="UIManager" type="CanvasLayer" parent="."]
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=244627368]
 script = ExtResource("4")
 
-[node name="NotificationLabel" type="Label" parent="UIManager"]
+[node name="NotificationLabel" type="Label" parent="UIManager" unique_id=775746133]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 500.0
 offset_bottom = 60.0
 text = "Salle Aventures - Cliquez sur les buzzers (Enigmes)"
 
-[node name="FeedbackLabel" type="Label" parent="UIManager"]
+[node name="FeedbackLabel" type="Label" parent="UIManager" unique_id=1723485019]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -106,7 +114,9 @@ offset_right = 200.0
 offset_bottom = 50.0
 text = "Feedback"
 
-[node name="EnigmaPanel" type="PanelContainer" parent="UIManager"]
+[node name="EnigmaPanel" type="PanelContainer" parent="UIManager" unique_id=2092945084]
+visible = false
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -115,299 +125,299 @@ offset_left = -300.0
 offset_top = -150.0
 offset_right = 300.0
 offset_bottom = 150.0
-visible = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/EnigmaPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/EnigmaPanel" unique_id=1888268496]
 layout_mode = 2
 
-[node name="QuestionLabel" type="Label" parent="UIManager/EnigmaPanel/VBoxContainer"]
+[node name="QuestionLabel" type="Label" parent="UIManager/EnigmaPanel/VBoxContainer" unique_id=278553807]
 layout_mode = 2
 text = "Question?"
 
-[node name="AnswerInput" type="LineEdit" parent="UIManager/EnigmaPanel/VBoxContainer"]
+[node name="AnswerInput" type="LineEdit" parent="UIManager/EnigmaPanel/VBoxContainer" unique_id=407793319]
 layout_mode = 2
 placeholder_text = "Reponse..."
 
-[node name="SubmitButton" type="Button" parent="UIManager/EnigmaPanel/VBoxContainer"]
+[node name="SubmitButton" type="Button" parent="UIManager/EnigmaPanel/VBoxContainer" unique_id=350705972]
 layout_mode = 2
 text = "Soumettre"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=633570367]
 transform = Transform3D(0.5, -0.707107, 0.5, 0.707107, 0, 0.707107, -0.5, 0.707107, 0.5, 0, 10, 0)
-energy_multiplier = 1.5
 
-[node name="PointLight3D" type="OmniLight3D" parent="."]
+[node name="PointLight3D" type="OmniLight3D" parent="." unique_id=148780338]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 omni_range = 20.0
 
-[node name="CornerLight1" type="OmniLight3D" parent="."]
+[node name="CornerLight1" type="OmniLight3D" parent="." unique_id=751028833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 8, -8)
-omni_range = 10.0
 light_color = Color(0.6, 0.8, 1, 1)
+omni_range = 10.0
 
-[node name="CornerLight2" type="OmniLight3D" parent="."]
+[node name="CornerLight2" type="OmniLight3D" parent="." unique_id=832189882]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, -8)
-omni_range = 10.0
 light_color = Color(0.6, 0.8, 1, 1)
+omni_range = 10.0
 
-[node name="CornerLight3" type="OmniLight3D" parent="."]
+[node name="CornerLight3" type="OmniLight3D" parent="." unique_id=867770421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 8, 12)
-omni_range = 10.0
 light_color = Color(0.8, 0.6, 1, 1)
+omni_range = 10.0
 
-[node name="CornerLight4" type="OmniLight3D" parent="."]
+[node name="CornerLight4" type="OmniLight3D" parent="." unique_id=1383649060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 12)
-omni_range = 10.0
 light_color = Color(0.8, 0.6, 1, 1)
+omni_range = 10.0
 
-[node name="Columns" type="Node3D" parent="."]
+[node name="Columns" type="Node3D" parent="." unique_id=1850248050]
 
-[node name="Column1" type="StaticBody3D" parent="Columns"]
+[node name="Column1" type="StaticBody3D" parent="Columns" unique_id=1490852116]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -10, 4, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Columns/Column1"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Columns/Column1" unique_id=1450989179]
 material_override = SubResource("Material_Wood")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column1" unique_id=1408479820]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Column2" type="StaticBody3D" parent="Columns"]
+[node name="Column2" type="StaticBody3D" parent="Columns" unique_id=1288236581]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 0, 4, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Columns/Column2"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Columns/Column2" unique_id=1961021425]
 material_override = SubResource("Material_Wood")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column2" unique_id=190836839]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Column3" type="StaticBody3D" parent="Columns"]
+[node name="Column3" type="StaticBody3D" parent="Columns" unique_id=1039830324]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 10, 4, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Columns/Column3"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Columns/Column3" unique_id=1970830185]
 material_override = SubResource("Material_Wood")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column3" unique_id=1465076060]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Column4" type="StaticBody3D" parent="Columns"]
+[node name="Column4" type="StaticBody3D" parent="Columns" unique_id=1606656853]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -10, 4, 10)
 
-[node name="Mesh" type="MeshInstance3D" parent="Columns/Column4"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Columns/Column4" unique_id=1990620290]
 material_override = SubResource("Material_Wood")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column4" unique_id=799629571]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Column5" type="StaticBody3D" parent="Columns"]
+[node name="Column5" type="StaticBody3D" parent="Columns" unique_id=1717259249]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 0, 4, 10)
 
-[node name="Mesh" type="MeshInstance3D" parent="Columns/Column5"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Columns/Column5" unique_id=1823554543]
 material_override = SubResource("Material_Wood")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column5" unique_id=2064205280]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Column6" type="StaticBody3D" parent="Columns"]
+[node name="Column6" type="StaticBody3D" parent="Columns" unique_id=1768577435]
 transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 10, 4, 10)
 
-[node name="Mesh" type="MeshInstance3D" parent="Columns/Column6"]
-mesh = SubResource("BoxMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Columns/Column6" unique_id=690128372]
 material_override = SubResource("Material_Wood")
+mesh = SubResource("BoxMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Columns/Column6" unique_id=1814167330]
 shape = SubResource("BoxShape3D_1")
 
-[node name="Beams" type="Node3D" parent="."]
+[node name="Beams" type="Node3D" parent="." unique_id=1465813856]
 
-[node name="BeamHorizontal1" type="StaticBody3D" parent="Beams"]
-transform = Transform3D(20, 0.5, 0, 0, 0.5, 0, 0, 0, 0.8, 0, 10, -5)
-
-[node name="Mesh" type="MeshInstance3D" parent="Beams/BeamHorizontal1"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Wood")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Beams/BeamHorizontal1"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="BeamHorizontal2" type="StaticBody3D" parent="Beams"]
-transform = Transform3D(20, 0.5, 0, 0, 0.5, 0, 0, 0, 0.8, 0, 10, 10)
-
-[node name="Mesh" type="MeshInstance3D" parent="Beams/BeamHorizontal2"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Wood")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Beams/BeamHorizontal2"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=2093444657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("5")
 
-[node name="Body" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_1")
+[node name="Body" type="MeshInstance3D" parent="Player" unique_id=1966576159]
 material_override = SubResource("Material_Cyan")
+mesh = SubResource("CapsuleMesh_1")
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=981060815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 current = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=500168285]
 shape = SubResource("CapsuleShape3D_1")
 
-[node name="Enigma1" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 5)
+[node name="Enigma1" type="Area3D" parent="." unique_id=648796060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.15372896, 5)
 script = ExtResource("8")
-enigma_id = 1
 
-[node name="Mesh" type="MeshInstance3D" parent="Enigma1"]
-mesh = SubResource("CylinderMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Enigma1" unique_id=2120396169]
 material_override = SubResource("Material_Blue")
+mesh = SubResource("CylinderMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma1" unique_id=307103074]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Enigma1"]
-omni_range = 3.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma1" unique_id=1260194898]
 light_color = Color(0, 0.5, 1, 1)
+omni_range = 3.0
 
-[node name="Enigma2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 5)
+[node name="Enigma2" type="Area3D" parent="." unique_id=611345454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.15372896, 5)
 script = ExtResource("8")
 enigma_id = 2
 
-[node name="Mesh" type="MeshInstance3D" parent="Enigma2"]
-mesh = SubResource("CylinderMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Enigma2" unique_id=865425788]
 material_override = SubResource("Material_Blue")
+mesh = SubResource("CylinderMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma2" unique_id=1457570954]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Enigma2"]
-omni_range = 3.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma2" unique_id=1873250062]
 light_color = Color(0, 0.5, 1, 1)
+omni_range = 3.0
 
-[node name="Enigma3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
+[node name="Enigma3" type="Area3D" parent="." unique_id=39714394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15372896, 5)
 script = ExtResource("8")
 enigma_id = 3
 
-[node name="Mesh" type="MeshInstance3D" parent="Enigma3"]
-mesh = SubResource("CylinderMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Enigma3" unique_id=651692029]
 material_override = SubResource("Material_Green")
+mesh = SubResource("CylinderMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma3" unique_id=1575531322]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Enigma3"]
-omni_range = 3.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma3" unique_id=1029089267]
 light_color = Color(0, 1, 0, 1)
+omni_range = 3.0
 
-[node name="Enigma4" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 5)
+[node name="Enigma4" type="Area3D" parent="." unique_id=144241663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.15372896, 5)
 script = ExtResource("8")
 enigma_id = 4
 
-[node name="Mesh" type="MeshInstance3D" parent="Enigma4"]
-mesh = SubResource("CylinderMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Enigma4" unique_id=1342765156]
 material_override = SubResource("Material_Green")
+mesh = SubResource("CylinderMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma4" unique_id=1168042238]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Enigma4"]
-omni_range = 3.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma4" unique_id=775234744]
 light_color = Color(0, 1, 0, 1)
+omni_range = 3.0
 
-[node name="Enigma5" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 5)
+[node name="Enigma5" type="Area3D" parent="." unique_id=1610725313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.15372896, 5)
 script = ExtResource("8")
 enigma_id = 5
 
-[node name="Mesh" type="MeshInstance3D" parent="Enigma5"]
-mesh = SubResource("CylinderMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Enigma5" unique_id=1478880272]
 material_override = SubResource("Material_Purple")
+mesh = SubResource("CylinderMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma5" unique_id=2053216843]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Enigma5"]
-omni_range = 3.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma5" unique_id=307229338]
 light_color = Color(1, 0, 1, 1)
+omni_range = 3.0
 
-[node name="Enigma6" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 5)
+[node name="Enigma6" type="Area3D" parent="." unique_id=115647189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -0.15372896, 5)
 script = ExtResource("8")
 enigma_id = 6
 
-[node name="Mesh" type="MeshInstance3D" parent="Enigma6"]
-mesh = SubResource("CylinderMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="Enigma6" unique_id=1348474000]
 material_override = SubResource("Material_Purple")
+mesh = SubResource("CylinderMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enigma6" unique_id=752451298]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Enigma6"]
-omni_range = 3.0
+[node name="OmniLight3D" type="OmniLight3D" parent="Enigma6" unique_id=1804210437]
 light_color = Color(1, 0, 1, 1)
+omni_range = 3.0
 
-[node name="HiddenTreasures" type="Node3D" parent="."]
+[node name="HiddenTreasures" type="Node3D" parent="." unique_id=1774629626]
 
-[node name="GoldenSphere1" type="Area3D" parent="HiddenTreasures"]
+[node name="GoldenSphere1" type="Area3D" parent="HiddenTreasures" unique_id=422965083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.5, -15)
 
-[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/GoldenSphere1"]
-mesh = SubResource("SphereMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/GoldenSphere1" unique_id=312331616]
 material_override = SubResource("Material_Gold")
+mesh = SubResource("SphereMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/GoldenSphere1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/GoldenSphere1" unique_id=578076745]
 shape = SubResource("SphereShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/GoldenSphere1"]
-omni_range = 2.0
+[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/GoldenSphere1" unique_id=2043228979]
 light_color = Color(1, 0.85, 0, 1)
+omni_range = 2.0
 
-[node name="SilverSphere1" type="Area3D" parent="HiddenTreasures"]
+[node name="SilverSphere1" type="Area3D" parent="HiddenTreasures" unique_id=123909355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -15)
 
-[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/SilverSphere1"]
-mesh = SubResource("SphereMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/SilverSphere1" unique_id=1739175758]
 material_override = SubResource("Material_Silver")
+mesh = SubResource("SphereMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/SilverSphere1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/SilverSphere1" unique_id=279382123]
 shape = SubResource("SphereShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/SilverSphere1"]
-omni_range = 1.5
+[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/SilverSphere1" unique_id=1499504975]
 light_color = Color(0.9, 0.9, 0.9, 1)
+omni_range = 1.5
 
-[node name="RedSphere1" type="Area3D" parent="HiddenTreasures"]
+[node name="RedSphere1" type="Area3D" parent="HiddenTreasures" unique_id=1108169716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -15)
 
-[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/RedSphere1"]
-mesh = SubResource("SphereMesh_1")
+[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/RedSphere1" unique_id=1457375904]
 material_override = SubResource("Material_Red")
+mesh = SubResource("SphereMesh_1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/RedSphere1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/RedSphere1" unique_id=2007326900]
 shape = SubResource("SphereShape3D_1")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/RedSphere1"]
-omni_range = 2.5
+[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/RedSphere1" unique_id=945237219]
 light_color = Color(1, 0.2, 0.2, 1)
+omni_range = 2.5
 
-[node name="NextSceneButton" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+[node name="NextSceneButton" type="Area3D" parent="." unique_id=777466863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.052489996, -10)
 script = ExtResource("7")
 next_scene = "res://scenes/mur_messages.tscn"
-require_all_enigmas = true
 
-[node name="Mesh" type="MeshInstance3D" parent="NextSceneButton"]
+[node name="Mesh" type="MeshInstance3D" parent="NextSceneButton" unique_id=226296223]
+material_override = SubResource("StandardMaterial3D_dfvbu")
 mesh = SubResource("CylinderMesh_1")
-material_override = SubResource("Material_Purple")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NextSceneButton"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextSceneButton" unique_id=2044478611]
 shape = SubResource("CylinderShape3D_1")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1199509501]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=1247962136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6115551, 0)
+material_override = SubResource("StandardMaterial3D_7feju")
+mesh = SubResource("BoxMesh_hcvuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=427568068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5937791, 0)
+shape = SubResource("BoxShape3D_712tb")
+
+[node name="Ground" type="StaticBody3D" parent="Ground" unique_id=1898515417]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 7.9132404, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground/Ground" unique_id=1609982199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6115551, 0)
+material_override = SubResource("StandardMaterial3D_7feju")
+mesh = SubResource("BoxMesh_hcvuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ground" unique_id=1523969646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5937791, 0)
+shape = SubResource("BoxShape3D_712tb")
