@@ -31,6 +31,27 @@ albedo_color = Color(0, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="Material_Red"]
 albedo_color = Color(1, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="Material_DarkGray"]
+albedo_color = Color(0.25, 0.25, 0.25, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_Black"]
+albedo_color = Color(0.1, 0.1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_LightBlue"]
+albedo_color = Color(0.8, 0.9, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_Teal"]
+albedo_color = Color(0.2, 0.7, 0.8, 1)
+emission_enabled = true
+emission = Color(0.2, 0.7, 0.8, 1)
+emission_energy_multiplier = 0.3
+
+[sub_resource type="StandardMaterial3D" id="Material_Orange"]
+albedo_color = Color(1, 0.6, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_Green"]
+albedo_color = Color(0.3, 0.8, 0.4, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2"]
 
 [node name="Bureau" type="Node3D" unique_id=241277613]
@@ -158,6 +179,108 @@ material_override = SubResource("Material_Wood")
 mesh = SubResource("BoxMesh_1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Desk1" unique_id=596909910]
+shape = SubResource("BoxShape3D_1")
+
+[node name="ModernDecor" type="Node3D" parent="." unique_id=1234567890]
+
+[node name="Chair1" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(0.6, 0, 0, 0, 0.8, 0, 0, 0, 0.6, -10, 0.8, -8)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Chair1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Black")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Chair1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Monitor1" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.2, -6, 2.5, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Monitor1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_LightBlue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Monitor1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Monitor2" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.2, 6, 2.5, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Monitor2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_LightBlue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Monitor2"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Plant1" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(0.4, 0, 0, 0, 1.2, 0, 0, 0, 0.4, -20, 1, -5)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Plant1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Green")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Plant1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Plant2" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(0.4, 0, 0, 0, 1.2, 0, 0, 0, 0.4, 20, 1, 5)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Plant2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Green")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Plant2"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Poster1" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 0.1, -23, 6, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Poster1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Teal")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Poster1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Poster2" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(3, 0, 0, 0, 2, 0, 0, 0, 0.1, 23, 6, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Poster2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Orange")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Poster2"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Shelves" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 5, 20)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Shelves"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Wood")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Shelves"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Books1" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(0.8, 0, 0, 0, 0.4, 0, 0, 0, 0.3, -1, 5.5, 20)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Books1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Orange")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Books1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Books2" type="StaticBody3D" parent="ModernDecor"]
+transform = Transform3D(0.8, 0, 0, 0, 0.4, 0, 0, 0, 0.3, 1, 5.5, 20)
+
+[node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Books2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Teal")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ModernDecor/Books2"]
 shape = SubResource("BoxShape3D_1")
 
 [node name="Ceiling" type="StaticBody3D" parent="." unique_id=602219200]
