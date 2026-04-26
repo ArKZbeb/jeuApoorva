@@ -8,10 +8,12 @@ class_name PlayerController
 @export var mouse_sensitivity: float = 2.0
 @export var max_look_angle: float = 90.0
 @export var gravity: float = 9.8
+@export var jump_force: float = 5.0
 
 var player_index: int = 0
 var x_rotation: float = 0.0
 var camera_3d: Camera3D
+var is_jumping: bool = false
 
 func _ready():
 	add_to_group("player")
@@ -21,7 +23,9 @@ func _ready():
 		push_error("[PlayerController] Camera3D not found!")
 		return
 	
-	print("[PlayerController] Player ready")
+	# Capture la souris pour un contrôle FPS fluide
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	print("[PlayerController] Player ready - mouse captured for FPS controls")
 
 func _physics_process(delta):
 	# Clavier directement
@@ -46,21 +50,41 @@ func _physics_process(delta):
 	
 	velocity.x = move_dir.x * move_speed
 	velocity.z = move_dir.z * move_speed
-	velocity.y -= gravity * delta
+	
+	# Gestion du saut
+	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
+		velocity.y = jump_force
+		is_jumping = true
+	
+	# Appliquer la gravité
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		is_jumping = false
 	
 	move_and_slide()
 
 func _input(event: InputEvent):
-	# Gestion de la souris pour regarder
-	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+	# Gestion de la souris pour regarder (toujours actif en mode FPS)
+	if event is InputEventMouseMotion:
 		var motion = event as InputEventMouseMotion
 		var look_x = motion.relative.x * mouse_sensitivity * 0.01
 		var look_y = motion.relative.y * mouse_sensitivity * 0.01
 		
+		# Rotation horizontale (Y axis)
 		rotate_y(-look_x)
+		
+		# Rotation verticale (X axis) - limitée pour regarder up/down
 		x_rotation -= look_y
 		x_rotation = clamp(x_rotation, -max_look_angle, max_look_angle)
 		camera_3d.rotation.x = deg_to_rad(x_rotation)
+	
+	# Appuyer sur Échap pour relâcher la souris
+	if Input.is_action_just_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func initialize(index: int):
 	player_index = index
