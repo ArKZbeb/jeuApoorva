@@ -38,6 +38,9 @@ func display_messages_on_wall():
 	var wall_label = $FinalDecor/MessageWall/Label3D if has_node("FinalDecor/MessageWall/Label3D") else null
 	if wall_label:
 		wall_label.text = message_text
+		wall_label.font_size = 32
+		wall_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		wall_label.width = 100  # Largeur pour forcer le word wrap
 		print("[MessageWallDisplay] Messages displayed on wall")
 	else:
 		push_error("[MessageWallDisplay] Label3D on wall not found!")

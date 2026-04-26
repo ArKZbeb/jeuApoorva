@@ -116,7 +116,9 @@ shape = SubResource("BoxShape3D_1")
 
 [node name="Label3D" type="Label3D" parent="FinalDecor/MessageWall"]
 text = "Messages..."
-font_size = 64
+font_size = 32
+autowrap_mode = 1
+width = 100
 
 [node name="Ground" type="StaticBody3D" parent="FinalDecor" unique_id=1126633582]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
