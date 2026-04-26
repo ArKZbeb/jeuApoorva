@@ -141,6 +141,26 @@ mesh = SubResource("BoxMesh_1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalDecor/MessageWall2" unique_id=2133429486]
 shape = SubResource("BoxShape3D_1")
 
+[node name="MessageWall3" type="StaticBody3D" parent="FinalDecor" unique_id=410217346]
+transform = Transform3D(-9.507227e-07, 0, 1, 0, 15, 0, -21.75, 0, -4.371139e-08, -10, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="FinalDecor/MessageWall3" unique_id=1738481680]
+material_override = SubResource("Material_Yellow")
+mesh = SubResource("BoxMesh_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalDecor/MessageWall3" unique_id=1547098980]
+shape = SubResource("BoxShape3D_1")
+
+[node name="MessageWall4" type="StaticBody3D" parent="FinalDecor" unique_id=1756461826]
+transform = Transform3D(-9.507227e-07, 0, 1, 0, 15, 0, -21.75, 0, -4.371139e-08, 9, 5, -8.305164e-07)
+
+[node name="Mesh" type="MeshInstance3D" parent="FinalDecor/MessageWall4" unique_id=1811134329]
+material_override = SubResource("Material_Yellow")
+mesh = SubResource("BoxMesh_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalDecor/MessageWall4" unique_id=1502391516]
+shape = SubResource("BoxShape3D_1")
+
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1686045047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
 script = ExtResource("5")
