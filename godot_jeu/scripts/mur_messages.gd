@@ -34,8 +34,15 @@ func display_messages_on_wall():
 	
 	message_text += "\n👑 MEME QUEEN 👑"
 	
-	# Afficher sur l'écran UI
+	# Afficher sur le mur 3D
+	var wall_label = $FinalDecor/MessageWall/Label3D if has_node("FinalDecor/MessageWall/Label3D") else null
+	if wall_label:
+		wall_label.text = message_text
+		print("[MessageWallDisplay] Messages displayed on wall")
+	else:
+		push_error("[MessageWallDisplay] Label3D on wall not found!")
+	
+	# Aussi afficher sur l'écran UI comme backup
 	var messages_display = $UIManager/MessagesDisplay if has_node("UIManager/MessagesDisplay") else null
 	if messages_display:
 		messages_display.text = message_text
-		print("[MessageWallDisplay] Messages displayed on screen")
