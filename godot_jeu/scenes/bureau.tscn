@@ -340,6 +340,36 @@ mesh = SubResource("BoxMesh_1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2" unique_id=1343760039]
 shape = SubResource("BoxShape3D_1")
 
+[node name="BonusInteractions" type="Node3D" parent="."]
+
+[node name="EasterEggZone1" type="Area3D" parent="BonusInteractions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, 15)
+
+[node name="Mesh" type="MeshInstance3D" parent="BonusInteractions/EasterEggZone1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Teal")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BonusInteractions/EasterEggZone1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Light" type="OmniLight3D" parent="BonusInteractions/EasterEggZone1"]
+light_color = Color(0.2, 0.7, 0.8, 1)
+omni_range = 3.0
+
+[node name="EasterEggZone2" type="Area3D" parent="BonusInteractions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 2, 15)
+
+[node name="Mesh" type="MeshInstance3D" parent="BonusInteractions/EasterEggZone2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Orange")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BonusInteractions/EasterEggZone2"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Light" type="OmniLight3D" parent="BonusInteractions/EasterEggZone2"]
+light_color = Color(1, 0.6, 0.2, 1)
+omni_range = 3.0
+
 [node name="NextSceneButton" type="Area3D" parent="." unique_id=1464440654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.8231106, 0)
 script = ExtResource("7")
