@@ -15,6 +15,15 @@ albedo_color = Color(0.5, 0.5, 0.5, 1.0)
 [sub_resource type="StandardMaterial3D" id="Material_Red"]
 albedo_color = Color(1.0, 0.0, 0.0, 1.0)
 
+[sub_resource type="StandardMaterial3D" id="Material_Wood"]
+albedo_color = Color(0.4, 0.3, 0.2, 1.0)
+
+[sub_resource type="StandardMaterial3D" id="Material_DarkGray"]
+albedo_color = Color(0.2, 0.2, 0.2, 1.0)
+
+[sub_resource type="StandardMaterial3D" id="Material_White"]
+albedo_color = Color(0.9, 0.9, 0.9, 1.0)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_1"]
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
 [sub_resource type="StandardMaterial3D" id="Material_Cyan"]
@@ -85,6 +94,94 @@ text = "Soumettre"
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, -0.707107, 0.5, 0.707107, 0, 0.707107, -0.5, 0.707107, 0.5, 0, 10, 0)
 energy_multiplier = 1.5
+
+[node name="PointLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+omni_range = 15.0
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="LeftWall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, -25, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/LeftWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Gray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/LeftWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="RightWall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 30, 25, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/RightWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Gray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/RightWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="BackWall" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(30, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5, -25)
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/BackWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Gray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/BackWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Furniture" type="Node3D" parent="."]
+
+[node name="Desk1" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(5, 0.5, 0, 0, 0.5, 0, 0, 0, 2, -8, 2, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Wood")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Desk1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Desk2" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(5, 0.5, 0, 0, 0.5, 0, 0, 0, 2, 8, 2, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Desk2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Wood")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Desk2"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Cabinet1" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(2, 3, 0, 0, 3, 0, 0, 0, 2, -20, 3, 5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Cabinet1"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_DarkGray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Cabinet1"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Cabinet2" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(2, 3, 0, 0, 3, 0, 0, 0, 2, 20, 3, 5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Furniture/Cabinet2"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_DarkGray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Furniture/Cabinet2"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 10, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ceiling"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_White")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+shape = SubResource("BoxShape3D_1")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)

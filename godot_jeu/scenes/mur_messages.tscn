@@ -14,6 +14,15 @@ albedo_color = Color(0.5, 0.5, 0.5, 1.0)
 [sub_resource type="StandardMaterial3D" id="Material_Yellow"]
 albedo_color = Color(1.0, 1.0, 0.0, 1.0)
 
+[sub_resource type="StandardMaterial3D" id="Material_DarkGray"]
+albedo_color = Color(0.2, 0.2, 0.2, 1.0)
+
+[sub_resource type="StandardMaterial3D" id="Material_Purple"]
+albedo_color = Color(0.6, 0.2, 0.8, 1.0)
+emission_enabled = true
+emission = Color(0.6, 0.2, 0.8, 1.0)
+emission_energy_multiplier = 0.2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_1"]
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1"]
 [sub_resource type="StandardMaterial3D" id="Material_Cyan"]
@@ -90,6 +99,60 @@ text = "Messages..."
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5, -0.707107, 0.5, 0.707107, 0, 0.707107, -0.5, 0.707107, 0.5, 0, 10, 0)
 energy_multiplier = 1.5
+
+[node name="SpecialLighting" type="Node3D" parent="."]
+
+[node name="PurpleLight1" type="OmniLight3D" parent="SpecialLighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 8, 5)
+omni_range = 12.0
+light_color = Color(0.8, 0.2, 1, 1)
+
+[node name="PurpleLight2" type="OmniLight3D" parent="SpecialLighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 8, 5)
+omni_range = 12.0
+light_color = Color(0.8, 0.2, 1, 1)
+
+[node name="SpecialWalls" type="Node3D" parent="."]
+
+[node name="LeftWall" type="StaticBody3D" parent="SpecialWalls"]
+transform = Transform3D(1, 0, 0, 0, 15, 0, 0, 0, 20, -10, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SpecialWalls/LeftWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Purple")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialWalls/LeftWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="RightWall" type="StaticBody3D" parent="SpecialWalls"]
+transform = Transform3D(1, 0, 0, 0, 15, 0, 0, 0, 20, 10, 5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SpecialWalls/RightWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_Purple")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialWalls/RightWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="BackWall" type="StaticBody3D" parent="SpecialWalls"]
+transform = Transform3D(20, 0, 0, 0, 15, 0, 0, 0, 1, 0, 5, -5)
+
+[node name="Mesh" type="MeshInstance3D" parent="SpecialWalls/BackWall"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_DarkGray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpecialWalls/BackWall"]
+shape = SubResource("BoxShape3D_1")
+
+[node name="Ceiling" type="StaticBody3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 25, 0, 15, 5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ceiling"]
+mesh = SubResource("BoxMesh_1")
+material_override = SubResource("Material_DarkGray")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling"]
+shape = SubResource("BoxShape3D_1")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
