@@ -45,57 +45,11 @@ emission_enabled = true
 emission = Color(1, 0, 1, 1)
 emission_energy_multiplier = 0.5
 
-[sub_resource type="StandardMaterial3D" id="Material_Gold"]
-albedo_color = Color(1, 0.85, 0, 1)
-emission_enabled = true
-emission = Color(1, 0.85, 0, 1)
-emission_energy_multiplier = 0.3
-
-[sub_resource type="SphereMesh" id="SphereMesh_1"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_1"]
-
-[sub_resource type="StandardMaterial3D" id="Material_Silver"]
-albedo_color = Color(0.8, 0.8, 0.8, 1)
-emission_enabled = true
-emission = Color(0.9, 0.9, 0.9, 1)
-emission_energy_multiplier = 0.2
-
-[sub_resource type="StandardMaterial3D" id="Material_Red"]
-albedo_color = Color(1, 0.2, 0.2, 1)
-emission_enabled = true
-emission = Color(1, 0.2, 0.2, 1)
-emission_energy_multiplier = 0.3
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfvbu"]
 albedo_color = Color(1.6852883, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 0.5
-
-[sub_resource type="StandardMaterial3D" id="Material_DarkGray"]
-albedo_color = Color(0.25, 0.25, 0.25, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_LightGray"]
-albedo_color = Color(0.7, 0.7, 0.7, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_Orange"]
-albedo_color = Color(1, 0.6, 0.2, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_Pink"]
-albedo_color = Color(1, 0.4, 0.7, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_Yellow"]
-albedo_color = Color(1, 1, 0, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_White"]
-albedo_color = Color(0.9, 0.9, 0.9, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_Glow_Secret"]
-albedo_color = Color(0.3, 0.8, 0.9, 1)
-emission_enabled = true
-emission = Color(0.3, 0.8, 0.9, 1)
-emission_energy_multiplier = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7feju"]
 albedo_color = Color(0.5, 0.5, 0.5, 1)
@@ -192,51 +146,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 12)
 light_color = Color(0.8, 0.6, 1, 1)
 omni_range = 10.0
 
-[node name="NeonLights" type="Node3D" parent="."]
+[node name="NeonLights" type="Node3D" parent="." unique_id=1677735066]
 
-[node name="NeonTop1" type="OmniLight3D" parent="NeonLights"]
+[node name="NeonTop1" type="OmniLight3D" parent="NeonLights" unique_id=1227797586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 9, 5)
 light_color = Color(0, 1, 1, 1)
 omni_range = 6.0
-energy_multiplier = 0.8
 
-[node name="NeonTop2" type="OmniLight3D" parent="NeonLights"]
+[node name="NeonTop2" type="OmniLight3D" parent="NeonLights" unique_id=802513031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 5)
 light_color = Color(1, 0.5, 0, 1)
 omni_range = 6.0
-energy_multiplier = 0.8
 
-[node name="NeonTop3" type="OmniLight3D" parent="NeonLights"]
+[node name="NeonTop3" type="OmniLight3D" parent="NeonLights" unique_id=1479944495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 9, 5)
 light_color = Color(1, 0.2, 0.8, 1)
 omni_range = 6.0
-energy_multiplier = 0.8
 
-[node name="NeonTop4" type="OmniLight3D" parent="NeonLights"]
+[node name="NeonTop4" type="OmniLight3D" parent="NeonLights" unique_id=1185904170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 9, 5)
 light_color = Color(0, 1, 0.5, 1)
 omni_range = 6.0
-energy_multiplier = 0.8
-
-[node name="AmbientEffects" type="Node3D" parent="."]
-
-[node name="VolumetricLight1" type="OmniLight3D" parent="AmbientEffects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, 0)
-light_color = Color(0.5, 0.7, 1, 1)
-omni_range = 25.0
-energy_multiplier = 0.3
-
-[node name="VolumetricLight2" type="OmniLight3D" parent="AmbientEffects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 0)
-light_color = Color(1, 0.5, 0.8, 1)
-omni_range = 25.0
-energy_multiplier = 0.3
-
-[node name="VolumetricLight3" type="OmniLight3D" parent="AmbientEffects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 10)
-light_color = Color(0.7, 1, 0.5, 1)
-omni_range = 20.0
-energy_multiplier = 0.25
 
 [node name="Columns" type="Node3D" parent="." unique_id=1850248050]
 
@@ -302,70 +232,8 @@ shape = SubResource("BoxShape3D_1")
 
 [node name="Beams" type="Node3D" parent="." unique_id=1465813856]
 
-[node name="EnigmaVisuals" type="Node3D" parent="."]
-
-[node name="Flag1" type="StaticBody3D" parent="EnigmaVisuals"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.1, -8, 3.5, 3)
-
-[node name="Mesh" type="MeshInstance3D" parent="EnigmaVisuals/Flag1"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Orange")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnigmaVisuals/Flag1"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="ProjectSign1" type="StaticBody3D" parent="EnigmaVisuals"]
-transform = Transform3D(1.5, 0, 0, 0, 0.6, 0, 0, 0, 0.1, -4, 3.5, 3)
-
-[node name="Mesh" type="MeshInstance3D" parent="EnigmaVisuals/ProjectSign1"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_LightGray")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnigmaVisuals/ProjectSign1"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="ProjectSign2" type="StaticBody3D" parent="EnigmaVisuals"]
-transform = Transform3D(1.5, 0, 0, 0, 0.6, 0, 0, 0, 0.1, 0, 3.5, 3)
-
-[node name="Mesh" type="MeshInstance3D" parent="EnigmaVisuals/ProjectSign2"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_DarkGray")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnigmaVisuals/ProjectSign2"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="MicrophoneSymbol" type="StaticBody3D" parent="EnigmaVisuals"]
-transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, 4, 3, 3)
-
-[node name="Mesh" type="MeshInstance3D" parent="EnigmaVisuals/MicrophoneSymbol"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Pink")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnigmaVisuals/MicrophoneSymbol"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="PostIts" type="StaticBody3D" parent="EnigmaVisuals"]
-transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 0.1, 8, 3.5, 3)
-
-[node name="Mesh" type="MeshInstance3D" parent="EnigmaVisuals/PostIts"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Yellow")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnigmaVisuals/PostIts"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="ForbiddenSign" type="StaticBody3D" parent="EnigmaVisuals"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.1, 12, 3.5, 3)
-
-[node name="Mesh" type="MeshInstance3D" parent="EnigmaVisuals/ForbiddenSign"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Red")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EnigmaVisuals/ForbiddenSign"]
-shape = SubResource("BoxShape3D_1")
-
 [node name="Player" type="CharacterBody3D" parent="." unique_id=2093444657]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6682863, 0.9857886, 12.552711)
 script = ExtResource("5")
 
 [node name="Body" type="MeshInstance3D" parent="Player" unique_id=1966576159]
@@ -476,95 +344,6 @@ omni_range = 3.0
 
 [node name="HiddenTreasures" type="Node3D" parent="." unique_id=1774629626]
 
-[node name="GoldenSphere1" type="Area3D" parent="HiddenTreasures" unique_id=422965083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.5, -15)
-
-[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/GoldenSphere1" unique_id=312331616]
-material_override = SubResource("Material_Gold")
-mesh = SubResource("SphereMesh_1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/GoldenSphere1" unique_id=578076745]
-shape = SubResource("SphereShape3D_1")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/GoldenSphere1" unique_id=2043228979]
-light_color = Color(1, 0.85, 0, 1)
-omni_range = 2.0
-
-[node name="SilverSphere1" type="Area3D" parent="HiddenTreasures" unique_id=123909355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -15)
-
-[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/SilverSphere1" unique_id=1739175758]
-material_override = SubResource("Material_Silver")
-mesh = SubResource("SphereMesh_1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/SilverSphere1" unique_id=279382123]
-shape = SubResource("SphereShape3D_1")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/SilverSphere1" unique_id=1499504975]
-light_color = Color(0.9, 0.9, 0.9, 1)
-omni_range = 1.5
-
-[node name="RedSphere1" type="Area3D" parent="HiddenTreasures" unique_id=1108169716]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -15)
-
-[node name="Mesh" type="MeshInstance3D" parent="HiddenTreasures/RedSphere1" unique_id=1457375904]
-material_override = SubResource("Material_Red")
-mesh = SubResource("SphereMesh_1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HiddenTreasures/RedSphere1" unique_id=2007326900]
-shape = SubResource("SphereShape3D_1")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="HiddenTreasures/RedSphere1" unique_id=945237219]
-light_color = Color(1, 0.2, 0.2, 1)
-omni_range = 2.5
-
-[node name="SecretZones" type="Node3D" parent="."]
-
-[node name="SecretHint1" type="StaticBody3D" parent="SecretZones"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -18, 3, -12)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecretZones/SecretHint1"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Glow_Secret")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SecretZones/SecretHint1"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Light" type="OmniLight3D" parent="SecretZones/SecretHint1"]
-light_color = Color(0.3, 0.8, 0.9, 1)
-omni_range = 3.0
-energy_multiplier = 0.7
-
-[node name="SecretHint2" type="StaticBody3D" parent="SecretZones"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 18, 3, -12)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecretZones/SecretHint2"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Glow_Secret")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SecretZones/SecretHint2"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Light" type="OmniLight3D" parent="SecretZones/SecretHint2"]
-light_color = Color(0.3, 0.8, 0.9, 1)
-omni_range = 3.0
-energy_multiplier = 0.7
-
-[node name="SecretHint3" type="StaticBody3D" parent="SecretZones"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 3, -18)
-
-[node name="Mesh" type="MeshInstance3D" parent="SecretZones/SecretHint3"]
-mesh = SubResource("BoxMesh_1")
-material_override = SubResource("Material_Glow_Secret")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SecretZones/SecretHint3"]
-shape = SubResource("BoxShape3D_1")
-
-[node name="Light" type="OmniLight3D" parent="SecretZones/SecretHint3"]
-light_color = Color(0.3, 0.8, 0.9, 1)
-omni_range = 3.0
-energy_multiplier = 0.7
-
 [node name="NextSceneButton" type="Area3D" parent="." unique_id=777466863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.052489996, -10)
 script = ExtResource("7")
@@ -577,26 +356,64 @@ mesh = SubResource("CylinderMesh_1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NextSceneButton" unique_id=2044478611]
 shape = SubResource("CylinderShape3D_1")
 
-[node name="Ground" type="StaticBody3D" parent="." unique_id=1199509501]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
+[node name="decors" type="Node3D" parent="." unique_id=195728041]
 
-[node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=1247962136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="bottom" type="StaticBody3D" parent="decors" unique_id=1199509501]
+transform = Transform3D(36.245, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="decors/bottom" unique_id=1247962136]
 material_override = SubResource("StandardMaterial3D_7feju")
 mesh = SubResource("BoxMesh_hcvuo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=427568068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decors/bottom" unique_id=427568068]
 shape = SubResource("BoxShape3D_712tb")
 
-[node name="Ground" type="StaticBody3D" parent="Ground" unique_id=1898515417]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 7.9132404, 0)
+[node name="bottom2" type="StaticBody3D" parent="decors" unique_id=298980089]
+transform = Transform3D(36.245, 0, 0, 0, 1, 0, 0, 0, 50, 0, 7.6080112, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Ground/Ground" unique_id=1609982199]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="decors/bottom2" unique_id=1732316442]
 material_override = SubResource("StandardMaterial3D_7feju")
 mesh = SubResource("BoxMesh_hcvuo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ground" unique_id=1523969646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decors/bottom2" unique_id=1831849691]
+shape = SubResource("BoxShape3D_712tb")
+
+[node name="mur 1" type="StaticBody3D" parent="decors" unique_id=2028157515]
+transform = Transform3D(-3.934025e-07, -1, 0, 9, -4.371139e-08, 0, 0, 0, 50, 17.609108, 3.1303005, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="decors/mur 1" unique_id=156240632]
+material_override = SubResource("StandardMaterial3D_7feju")
+mesh = SubResource("BoxMesh_hcvuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decors/mur 1" unique_id=1659071479]
+shape = SubResource("BoxShape3D_712tb")
+
+[node name="mur 2" type="StaticBody3D" parent="decors" unique_id=664159387]
+transform = Transform3D(-3.934025e-07, -1, 0, 9, -4.371139e-08, 0, 0, 0, 50, -17.64583, 3.1303005, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="decors/mur 2" unique_id=944366175]
+material_override = SubResource("StandardMaterial3D_7feju")
+mesh = SubResource("BoxMesh_hcvuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decors/mur 2" unique_id=1098388295]
+shape = SubResource("BoxShape3D_712tb")
+
+[node name="mur 3" type="StaticBody3D" parent="decors" unique_id=1294171059]
+transform = Transform3D(1.719617e-14, 4.371139e-08, 36.145, 9, -4.371139e-08, 0, 3.934025e-07, 1, -1.5799482e-06, -0.23755074, 3.1303005, 24.670702)
+
+[node name="Mesh" type="MeshInstance3D" parent="decors/mur 3" unique_id=129920271]
+material_override = SubResource("StandardMaterial3D_7feju")
+mesh = SubResource("BoxMesh_hcvuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decors/mur 3" unique_id=729290286]
+shape = SubResource("BoxShape3D_712tb")
+
+[node name="mur 4" type="StaticBody3D" parent="decors" unique_id=632515880]
+transform = Transform3D(1.719617e-14, 4.371139e-08, 36.145, 9, -4.371139e-08, 0, 3.934025e-07, 1, -1.5799482e-06, -0.23755074, 3.1303005, -24.84545)
+
+[node name="Mesh" type="MeshInstance3D" parent="decors/mur 4" unique_id=512175419]
+material_override = SubResource("StandardMaterial3D_7feju")
+mesh = SubResource("BoxMesh_hcvuo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="decors/mur 4" unique_id=1195671913]
 shape = SubResource("BoxShape3D_712tb")

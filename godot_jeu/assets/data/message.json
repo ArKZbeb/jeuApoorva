@@ -1,44 +1,16 @@
 {
   "messages": [
-    {
-      "auteur": "Alice",
-      "texte": "C'était un honneur de travailler avec toi! Tes idées créatives nous ont inspirés tous les jours. Bon vent dans ta nouvelle aventure! 🌟"
-    },
-    {
-      "auteur": "Bob",
-      "texte": "Je n'oublierai jamais tes blagues lors des réunions marathon. Merci d'avoir rendu le bureau plus vivant. À bientôt pour une bière! 🍺"
-    },
-    {
-      "auteur": "Carmen",
-      "texte": "Ta passion pour le travail bien fait était contagieuse. Continue à faire briller tes projets! On se voit au Karaoké prochainement 🎤"
-    },
-    {
-      "auteur": "David",
-      "texte": "Merci pour tous tes conseils techniques et ta patience. Tu vas nous manquer dans l'équipe! Profite de ton repos mérité 😊"
-    },
-    {
-      "auteur": "Emma",
-      "texte": "Les meilleurs moments au travail, c'était avec toi. Merci pour ces rires, ces défis relevés ensemble, et cette belle amitié. À jamais! 💫"
-    },
-    {
-      "auteur": "Franck",
-      "texte": "De Inde à Colombie, en passant par les Pays-Bas... tes histoires nous ont fait voyager! Reviens nous visiter. Briser les glaçons n'était pas pareil sans toi 🌍"
-    },
-    {
-      "auteur": "Gabrielle",
-      "texte": "Meme Queen, tu restes une légende. Tes projets (One Ad Conducteur, Le Décrochage) resteront des références. À la prochaine! 👑"
-    },
-    {
-      "auteur": "Hugo",
-      "texte": "Bordel de collègue! Tu vas nous manquer. Merci pour tout. Bonne chance pour l'avenir! 🚀"
-    },
-    {
-      "auteur": "Isabelle",
-      "texte": "Ton énergie était notre carburant. Merci d'avoir rendu chaque jour spécial. À bientôt! ✨"
-    },
-    {
-      "auteur": "Jérôme",
-      "texte": "Une équipe sans toi, ce ne sera plus jamais la même. Mais tu vas briller ailleurs, j'en suis sûr! À très vite 🎯"
-    }
+	{
+	  "auteur": "Nidia",
+	  "texte": "Je voudrais te dire combien tu vas nous manquer. Tu as toujours été disponible et patiente avec nos coups de stress et nos urgences. Tu es quelqu'un de porofondément humain ! Reste toujours toi-même malgré les vicissitudes. Je te souhaite beaucoup de succès et une vie belle et heureuse ❤️ Bises"
+	},
+	{
+	  "auteur": "Amandhi",
+	  "texte": "Ayyy Apoorva, tu vas laisser un vide à TF1, à la Diff ! Si heureuse de t'avoir rencontré, d'être devenue ta collègue et enfin ton amie."
+	},
+	{
+	  "auteur": "Tristan ",
+	  "texte": "Salut Apoorva, c'est juste pour te dire que t'es l'une des meilleurs personnes que j'ai rencontré. Je te"
+	}
   ]
 }

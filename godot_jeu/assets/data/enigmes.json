@@ -1,52 +1,52 @@
 {
   "enigmes": [
-    {
-      "id": 1,
-      "question": "Quel pays manque à sa famille?",
-      "reponse": "netherlands",
-      "indice": "Un pays avec des moulins et des tulipes",
-      "type": "clic_drapeau",
-      "feedback": "C'est ça! Sa sœur vit aux Pays-Bas! 🇳🇱"
-    },
-    {
-      "id": 2,
-      "question": "Premier grand projet qu'elle a mené?",
-      "reponse": "one ad conducteur",
-      "indice": "Publicité + Conducteur...",
-      "type": "texte",
-      "feedback": "Exact! One Ad Conducteur, un projet clé! 🎯"
-    },
-    {
-      "id": 3,
-      "question": "Quel autre projet majeur?",
-      "reponse": "le décrochage",
-      "indice": "L'autre grand projet innovant...",
-      "type": "texte",
-      "feedback": "Oui! Le Décrochage! 📊"
-    },
-    {
-      "id": 4,
-      "question": "Sa passion secrète?",
-      "reponse": "karaoke",
-      "indice": "Elle adore chanter! 🎤",
-      "type": "clic_objet",
-      "feedback": "Elle adore le karaoké! 🎵"
-    },
-    {
-      "id": 5,
-      "question": "Phrase culte pour briser les... ?",
-      "reponse": "briser les glaçons",
-      "indice": "Regardez les post-its!",
-      "type": "recherche",
-      "feedback": "Briser les glaçons! La phrase parfaite pour démarrer! ❄️"
-    },
-    {
-      "id": 6,
-      "question": "Mot 'interdit' qu'on adorait dire?",
-      "reponse": "bordel",
-      "indice": "C'était 'interdit' en entreprise...",
-      "type": "easter_egg",
-      "feedback": "BORDEL! 😄 Le mot qu'on n'était pas censé dire!"
-    }
+	{
+	  "id": 1,
+	  "question": "Quel est le pays d'origine de son mari",
+	  "reponse": "La Colombie",
+	  "indice": "Un pays d'Amérique latine",
+	  "type": "clic_drapeau",
+	  "feedback": "C'est ça! Un pays magnifique! 🇳🇱"
+	},
+	{
+	  "id": 2,
+	  "question": "Premier grand projet qu'elle a mené?",
+	  "reponse": "Le Décrochage",
+	  "indice": "Pays étrangé...",
+	  "type": "texte",
+	  "feedback": "Exact! Le décrocahge, le fameux, un projet clé! 🎯"
+	},
+	{
+	  "id": 3,
+	  "question": "Quel autre projet majeur?",
+	  "reponse": "Le One Ad Conducteur",
+	  "indice": "L'autre grand projet innovant...",
+	  "type": "texte",
+	  "feedback": "Oui! Le saint One Ad Condcuteur! 📊"
+	},
+	{
+	  "id": 4,
+	  "question": "Sa passion secrète?",
+	  "reponse": "le karaoke",
+	  "indice": "Elle adore chanter! 🎤",
+	  "type": "clic_objet",
+	  "feedback": "Elle adore le karaoké! 🎵"
+	},
+	{
+	  "id": 5,
+	  "question": "Phrase culte pour briser les... ?",
+	  "reponse": "briser les glaçons",
+	  "indice": "Regardez les post-its!",
+	  "type": "recherche",
+	  "feedback": "Briser les glaçons! La phrase parfaite pour démarrer! ❄️"
+	},
+	{
+	  "id": 6,
+	  "question": "Mot 'interdit' d'après certaine ?",
+	  "reponse": "bordel",
+	  "indice": "C'était 'interdit' en entreprise...",
+	  "type": "easter_egg",
+	  "feedback": "BORDEL! 😄 Tu es vachement doué, tu as doué !"
+	}
   ]
 }
