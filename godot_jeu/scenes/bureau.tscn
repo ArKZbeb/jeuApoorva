@@ -122,6 +122,20 @@ transform = Transform3D(0.5, -0.707107, 0.5, 0.707107, 0, 0.707107, -0.5, 0.7071
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
 omni_range = 15.0
 
+[node name="AmbientLighting" type="Node3D" parent="."]
+
+[node name="AmbientLight1" type="OmniLight3D" parent="AmbientLighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -15)
+light_color = Color(0.6, 0.8, 1, 1)
+omni_range = 18.0
+energy_multiplier = 0.2
+
+[node name="AmbientLight2" type="OmniLight3D" parent="AmbientLighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, 10)
+light_color = Color(1, 0.7, 0.8, 1)
+omni_range = 18.0
+energy_multiplier = 0.2
+
 [node name="Walls" type="Node3D" parent="." unique_id=2053100973]
 
 [node name="LeftWall" type="StaticBody3D" parent="Walls" unique_id=1681095044]

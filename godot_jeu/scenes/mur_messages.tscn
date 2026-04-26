@@ -250,6 +250,20 @@ material_override = SubResource("Material_Pink")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalDecor/DecorPillar2"]
 shape = SubResource("BoxShape3D_1")
 
+[node name="AmbientFinalGlow" type="Node3D" parent="FinalDecor"]
+
+[node name="GlowLight1" type="OmniLight3D" parent="FinalDecor/AmbientFinalGlow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6, 8)
+light_color = Color(1, 0.3, 0.8, 1)
+omni_range = 20.0
+energy_multiplier = 0.35
+
+[node name="GlowLight2" type="OmniLight3D" parent="FinalDecor/AmbientFinalGlow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 8)
+light_color = Color(0.2, 0.8, 1, 1)
+omni_range = 20.0
+energy_multiplier = 0.35
+
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1686045047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
 script = ExtResource("5")
