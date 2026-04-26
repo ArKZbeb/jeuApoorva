@@ -198,7 +198,7 @@ shape = SubResource("BoxShape3D_1")
 [node name="ModernDecor" type="Node3D" parent="." unique_id=1234567890]
 
 [node name="Chair1" type="StaticBody3D" parent="ModernDecor"]
-transform = Transform3D(0.6, 0, 0, 0, 0.8, 0, 0, 0, 0.6, -10, 0.4, -8)
+transform = Transform3D(0.6, 0, 0, 0, 0.8, 0, 0, 0, 0.6, -10, 0.5, -8)
 
 [node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Chair1"]
 mesh = SubResource("BoxMesh_1")
@@ -208,7 +208,7 @@ material_override = SubResource("Material_Black")
 shape = SubResource("BoxShape3D_1")
 
 [node name="Monitor1" type="StaticBody3D" parent="ModernDecor"]
-transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.2, -6, 2.3, -10)
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.2, -6, 2.4, -10)
 
 [node name="Mesh" type="MeshInstance3D" parent="ModernDecor/Monitor1"]
 mesh = SubResource("BoxMesh_1")
@@ -311,12 +311,12 @@ shape = SubResource("BoxShape3D_1")
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=592835332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6115551, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("Material_Gray")
 mesh = SubResource("BoxMesh_1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1852610092]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5937791, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_1")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=383791703]

@@ -581,22 +581,22 @@ shape = SubResource("CylinderShape3D_1")
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -1, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Ground" unique_id=1247962136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6115551, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_7feju")
 mesh = SubResource("BoxMesh_hcvuo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=427568068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5937791, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_712tb")
 
 [node name="Ground" type="StaticBody3D" parent="Ground" unique_id=1898515417]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 7.9132404, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Ground/Ground" unique_id=1609982199]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6115551, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_7feju")
 mesh = SubResource("BoxMesh_hcvuo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ground" unique_id=1523969646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5937791, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_712tb")
